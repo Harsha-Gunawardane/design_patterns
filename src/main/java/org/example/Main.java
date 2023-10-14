@@ -2,7 +2,6 @@ package org.example;
 
 
 import org.example.abstractFactory.Car;
-import org.example.adapter.*;
 import org.example.bridge.HDProcessor;
 import org.example.bridge.Netflix;
 import org.example.bridge.UHDProcessor;
@@ -13,6 +12,7 @@ import org.example.decorater.CheeseDecorator;
 import org.example.decorater.MushroomDecorator;
 import org.example.decorater.Pizza;
 import org.example.deepCopyPrototype.BookShop;
+import org.example.facade.RestaurantApp;
 import org.example.prototype.CarSale;
 
 import static org.example.abstractFactory.CarFactory.getCar;
@@ -95,6 +95,12 @@ public class Main {
         Pizza pizza = new MushroomDecorator(new CheeseDecorator(new BasePizza()));
         System.out.println(pizza.bake());
 
+        System.out.println("\n\n---------------------------\n\n");
+
+        RestaurantApp restaurantApp = new RestaurantApp();
+        restaurantApp.placeOrder();
+
+        restaurantApp.placeOrder();
     }
 
     public static void giveTip(Customer customer){
