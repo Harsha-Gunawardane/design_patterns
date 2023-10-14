@@ -9,5 +9,4 @@ public class Bank implements Account{
     public void withdraw(Integer amount){
         System.out.println("Successfully withdraw " + amount);
     }
-
 }

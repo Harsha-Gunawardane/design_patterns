@@ -7,6 +7,9 @@ import org.example.bridge.Netflix;
 import org.example.bridge.UHDProcessor;
 import org.example.bridge.Youtube;
 import org.example.builder.Burger;
+import org.example.composite.HRManager;
+import org.example.composite.MLEngineer;
+import org.example.composite.SoftwareEngineer;
 import org.example.decorater.BasePizza;
 import org.example.decorater.CheeseDecorator;
 import org.example.decorater.MushroomDecorator;
@@ -108,6 +111,22 @@ public class Main {
         ATM atm = new ATM();
         atm.deposit(5000);
         atm.withdraw(2000);
+
+        System.out.println("\n\n---------------------------\n\n");
+
+        HRManager hrManager = new HRManager("Thisura Perera", 120000D);
+
+        SoftwareEngineer softwareEngineer = new SoftwareEngineer("Harsha Gunawardane", 200000D);
+        MLEngineer mlEngineer = new MLEngineer("Neethamadu", 300000D);
+
+        hrManager.hireNewEmployee(softwareEngineer);
+        hrManager.hireNewEmployee(mlEngineer);
+
+        hrManager.getEmployeesInfo();
+
+        hrManager.fireEmployee(mlEngineer);
+
+        hrManager.getEmployeesInfo();
     }
 
     public static void giveTip(Customer customer){
