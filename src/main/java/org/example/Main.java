@@ -14,6 +14,7 @@ import org.example.decorater.Pizza;
 import org.example.deepCopyPrototype.BookShop;
 import org.example.facade.RestaurantApp;
 import org.example.prototype.CarSale;
+import org.example.proxy.ATM;
 
 import static org.example.abstractFactory.CarFactory.getCar;
 
@@ -101,6 +102,12 @@ public class Main {
         restaurantApp.placeOrder();
 
         restaurantApp.placeOrder();
+
+        System.out.println("\n\n---------------------------\n\n");
+
+        ATM atm = new ATM();
+        atm.deposit(5000);
+        atm.withdraw(2000);
     }
 
     public static void giveTip(Customer customer){
