@@ -7,6 +7,9 @@ import org.example.bridge.Netflix;
 import org.example.bridge.UHDProcessor;
 import org.example.bridge.Youtube;
 import org.example.builder.Burger;
+import org.example.chainOfResponsibility.Cash;
+import org.example.chainOfResponsibility.CreditCard;
+import org.example.chainOfResponsibility.PaymentMethod;
 import org.example.composite.HRManager;
 import org.example.composite.MLEngineer;
 import org.example.composite.SoftwareEngineer;
@@ -127,6 +130,17 @@ public class Main {
         hrManager.fireEmployee(mlEngineer);
 
         hrManager.getEmployeesInfo();
+
+        System.out.println("\n\n---------------------------\n\n");
+
+        PaymentMethod creditCard = new CreditCard();
+        PaymentMethod cashier = new Cash();
+
+        cashier.next(creditCard);
+
+        cashier.payment(1200);
+        cashier.payment(800);
+
     }
 
     public static void giveTip(Customer customer){
