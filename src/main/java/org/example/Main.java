@@ -3,6 +3,10 @@ package org.example;
 
 import org.example.abstractFactory.Car;
 import org.example.adapter.*;
+import org.example.bridge.HDProcessor;
+import org.example.bridge.Netflix;
+import org.example.bridge.UHDProcessor;
+import org.example.bridge.Youtube;
 import org.example.builder.Burger;
 import org.example.deepCopyPrototype.BookShop;
 import org.example.prototype.CarSale;
@@ -76,6 +80,11 @@ public class Main {
         nugegodaWarehouse.addItem(new GroceryItemAdapter(groceryItem));
 
         nugegodaWarehouse.showItems();
+
+        System.out.println("\n\n---------------------------\n\n");
+
+        Youtube youtubeVideo = new Youtube(new HDProcessor());
+        Netflix netflixVideo = new Netflix(new UHDProcessor());
 
     }
 
