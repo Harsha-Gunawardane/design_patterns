@@ -8,6 +8,10 @@ import org.example.bridge.Netflix;
 import org.example.bridge.UHDProcessor;
 import org.example.bridge.Youtube;
 import org.example.builder.Burger;
+import org.example.decorater.BasePizza;
+import org.example.decorater.CheeseDecorator;
+import org.example.decorater.MushroomDecorator;
+import org.example.decorater.Pizza;
 import org.example.deepCopyPrototype.BookShop;
 import org.example.prototype.CarSale;
 
@@ -69,22 +73,27 @@ public class Main {
 
         System.out.println("\n\n---------------------------\n\n");
 
-        Item submarine = new FoodItem("Submarine", 120D, "Dinemore");
-        Item pizza = new FoodItem("Pizza", 100D, "Pizza Hut");
-
-        Warehouse nugegodaWarehouse = new Warehouse("Nugegoda");
-        nugegodaWarehouse.addItem(submarine);
-        nugegodaWarehouse.addItem(pizza);
-
-        GroceryItem groceryItem = new GroceryItem("Sugar", 50D, "Keels");
-        nugegodaWarehouse.addItem(new GroceryItemAdapter(groceryItem));
-
-        nugegodaWarehouse.showItems();
+//        Item submarine = new FoodItem("Submarine", 120D, "Dinemore");
+//        Item pizza = new FoodItem("Pizza", 100D, "Pizza Hut");
+//
+//        Warehouse nugegodaWarehouse = new Warehouse("Nugegoda");
+//        nugegodaWarehouse.addItem(submarine);
+//        nugegodaWarehouse.addItem(pizza);
+//
+//        GroceryItem groceryItem = new GroceryItem("Sugar", 50D, "Keels");
+//        nugegodaWarehouse.addItem(new GroceryItemAdapter(groceryItem));
+//
+//        nugegodaWarehouse.showItems();
 
         System.out.println("\n\n---------------------------\n\n");
 
         Youtube youtubeVideo = new Youtube(new HDProcessor());
         Netflix netflixVideo = new Netflix(new UHDProcessor());
+
+        System.out.println("\n\n---------------------------\n\n");
+
+        Pizza pizza = new MushroomDecorator(new CheeseDecorator(new BasePizza()));
+        System.out.println(pizza.bake());
 
     }
 
